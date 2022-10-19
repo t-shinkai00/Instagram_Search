@@ -10,8 +10,10 @@ def main():
   ig_urls = get_ig_urls(key)
   for i, url in enumerate(ig_urls):
     # print(i, url)
-    time.sleep(2)
-    search_ig(url)
+    id_ = url.split("/")[3]
+    username, userid, mediacount, followers, followees, bio, external_url = search_ig(id_)
+    print("--------------------------------------")
+    print(username, userid, mediacount, followers, followees, bio, external_url)
 
 if __name__ == '__main__':
   main()
