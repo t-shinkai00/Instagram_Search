@@ -1,4 +1,6 @@
 from get_ig_urls import get_ig_urls
+from search_ig import search_ig
+
 
 def main():
   # 検索

@@ -1,3 +1,4 @@
+from variables import TARGET_URL, INPUT_SELECTOR, SEARCH_SELECTOR, IG_URL_SELECTOR
 import time
 
 from selenium import webdriver
@@ -6,7 +7,6 @@ options = Options()
 options.add_argument('--headless')
 wd = webdriver.Chrome(chrome_options=options)
 
-from variables import TARGET_URL, INPUT_SELECTOR, SEARCH_SELECTOR, IG_URL_SELECTOR
 
 def get_ig_urls(key):
   wd.get(TARGET_URL)
