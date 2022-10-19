@@ -18,3 +18,6 @@ def get_ig_urls(key):
   urls = map(lambda x: x.get_attribute('href'), wd.find_elements("css selector", IG_URL_SELECTOR))
   account_urls = list(filter(lambda x: x.split("/")[3] != "explore", urls))
   return account_urls
+
+if __name__ == '__main__':
+  get_ig_urls()
