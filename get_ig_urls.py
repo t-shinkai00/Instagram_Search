@@ -20,4 +20,5 @@ def get_ig_urls(key):
   return account_urls
 
 if __name__ == '__main__':
-  get_ig_urls()
+  key = '"#銀座" "#髪質改善"'
+  get_ig_urls(key)
