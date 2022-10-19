@@ -1,3 +1,4 @@
+from variables import TARGET_URL, INPUT_SELECTOR, SEARCH_SELECTOR, IG_URL_SELECTOR
 import time
 
 from selenium import webdriver
@@ -6,7 +7,6 @@ options = Options()
 options.add_argument('--headless')
 wd = webdriver.Chrome(chrome_options=options)
 
-from variables import TARGET_URL, INPUT_SELECTOR, SEARCH_SELECTOR, IG_URL_SELECTOR
 
 def get_ig_urls(key):
   wd.get(TARGET_URL)
@@ -18,3 +18,7 @@ def get_ig_urls(key):
   urls = map(lambda x: x.get_attribute('href'), wd.find_elements("css selector", IG_URL_SELECTOR))
   account_urls = list(filter(lambda x: x.split("/")[3] != "explore", urls))
   return account_urls
+
+if __name__ == '__main__':
+  key = '"#銀座" "#髪質改善"'
+  print(get_ig_urls(key))
